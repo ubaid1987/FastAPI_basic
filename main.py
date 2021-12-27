@@ -4,6 +4,8 @@
 # Press Double Shift to search everywhere for classes, files, tool windows, actions, and settings.
 from fastapi import FastAPI
 
+import schema
+
 app = FastAPI(title="Ubaid App",
     description="My First Attempt",
     version="2.4.1",
@@ -24,3 +26,8 @@ def unpublished():
 @app.get("/blog/{id}")
 def blog(id: int):
     return {"Data":{"Blog ID": id}}
+
+
+@app.get("/user")
+def create_user(request: schema.User):
+    return request
