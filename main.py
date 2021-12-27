@@ -13,6 +13,6 @@ def index():
 def about():
     return {"Data":{"About": "FastAPI"}}
 
-@app.get(f"/blog/{id}")
+@app.get("/blog/{id}")
 def blog(id):
     return {"Data":{"Blog ID": id}}
