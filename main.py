@@ -11,7 +11,7 @@ app = FastAPI(title="Ubaid App",
     version="2.4.1",
     )
 
-@app.get("/")
+@app.get("/", tags=["Blogs"])
 def index():
     return {"Data":{"name": "Ubaid"}}
 
@@ -19,15 +19,15 @@ def index():
 def about():
     return {"Data":{"About": "FastAPI"}}
 
-@app.get("/blog/unpublished")
+@app.get("/blog/unpublished", tags=["Blogs"])
 def unpublished():
     return {"Data ":{"Description ": "Unpublished Data"}}
 
-@app.get("/blog/{id}")
+@app.get("/blog/{id}", tags=["Blogs"])
 def blog(id: int):
     return {"Data":{"Blog ID": id}}
 
 
-@app.get("/user")
+@app.get("/user", tags=["Users"])
 def create_user(request: schema.User):
     return request
